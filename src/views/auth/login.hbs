@@ -1,30 +1,37 @@
 <div class="row">
-    <div class="col col-12 col-sm-8 col-md-8 col-lg-4 mx-auto">
-        <div class="card mt-5 rounded">
-            <div class="card-header text-center">
-                <h1 class="h4">
-                    Inicio de Sesión
-                </h1>
+    <div class="col-md-7 mx-auto">
+        <div class="card mt-1 bg-black border-dark">
+            <div class="card-header text-center bg-dark pt-5">
+                <h2 class="text-white">
+                    INGRESAR CUENTA
+                </h2>
             </div>
-            <img class="rounded-circle mx-auto d-block logo m-4" src="/img/logo.png" alt="Logo" />
+            <img class="rounded-circle mx-auto d-block m-3 corona" src="/img/logoM_corona.png" alt="corona" />
             <div class="card-body">
                 <form action="/login" method="POST">
-                    <div class="mb-3">
-                        <label for="email">Email:</label>
-                        <input type="email" class="form-control" name="email" placeholder="Correo electrónico"
-                            autofocus />
+                    <div class="mb-4">
+                        <label for="email"></label>
+                        <input type="email" class="form-control form-control-lg bg-dark text-white" name="email"
+                            placeholder="Correo electrónico" autofocus />
                     </div>
-                    <div class="mb-3">
-                        <label for="passsword">Password:</label>
-                        <input type="password" class="form-control" name="password" placeholder="Clave de seguridad" />
+                    <div class="mb-4">
+                        <label for="passsword"></label>
+                        <input type="password" class="form-control form-control-lg bg-dark text-white" name="password"
+                            placeholder="Clave de seguridad" />
                     </div>
-                    <button type="submit" class="btn btn-success btn-block">
-                        Signin
-                    </button>
+                    <div class="form-group text-center">
+                        <div class="d-grid gap-2 col-6 mx-auto">
+                            <button type="submit" class="btn btn-success btn-block btn-lg text-center"
+                                style="background: #000046;">
+                                INGRESAR
+                            </button>
+                        </div>
+                    </div>
                 </form>
             </div>
 
-            <p class="text-center">¿No tienes cuenta? <a href="/registro" class="text-info">Registrate</a></p>
+            <p class="text-center"> <strong>¿NO TIENES UNA CUENTA?</strong> <a href="/registro"
+                    class="text-info">REGISTRARSE</a></p>
         </div>
     </div>
 </div>

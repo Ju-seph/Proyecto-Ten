@@ -1,0 +1,53 @@
+<div class="card mt-5 rounded">
+    <table id="myTable" class="display table table_hover">
+        <thead>
+            <tr>
+                <th>Email</th>
+                <th>Nombre</th>
+                <th>Hora</th>
+                {{#if (val_rol ../session.rol) }}
+                <th>Opciones</th>
+                {{/if}}
+            </tr>
+        </thead>
+        <tbody>
+            {{#each users}}
+            <tr>
+                <td>{{email}}</td>
+                <td>{{name}}</td>
+                <td>
+                   <script>
+                    var fechaRegistro= new Date("{{horaRegistro}}");
+                    var dia= fechaRegistro.getDate();
+                    var mes = fechaRegistro.getMonth()+1;
+                    var año= fechaRegistro.getFullYear();
+                    var horas= fechaRegistro.getHours();
+                    var minutos = fechaRegistro.getMinutes();
+
+                    var fechaHoraFormatead= `${dia}/${mes}/${año} - ${horas}:${minutos}`
+                    document.currentScript.parentElement.innerHTML = fechaHoraFormatead;
+
+
+                   </script>
+                   
+                </td>
+                {{#if (val_rol ../session.rol) }}
+                <td><a href="/notas/editar" class="btn btn-primary"><i class="fas fa-edit"></i></a>
+                    <a class="btn btn-danger"><i class="fas fa-trash"></i></a>
+                    {{/if}}
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
+
+
+<link rel="stylesheet" href="https://cdn.datatables.net/2.0.1/css/dataTables.dataTables.min.css" />
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<script src="https://cdn.datatables.net/2.0.1/js/dataTables.min.js"></script>
+
+<script src="/js/table_users.js"></script>
+

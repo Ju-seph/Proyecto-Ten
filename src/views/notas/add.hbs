@@ -1,29 +1,33 @@
+
 <div class="row">
-    <div class="col col-12 col-sm-8 col-md-8 col-lg-4 mx-auto">
-        <div class="card mt-5 rounded">
-            <div class="card-header text-center">
-                <h1 class="h4">
-                    Agregar una nueva nota
-                </h1>
+    <div class="col-sm-6 mx-auto">
+        <div class="card border-dark">
+            <div class="card-header text-center bg-dark pt-4">
+                <h2 class="text-white">
+                    EDITAR CUENTA
+                </h2>
             </div>
             <div class="card-body">
-                <form action="/notas/add" method="POST">
-                    <div class="mb-3">
-                        <label for="title">Titulo:</label>
-                        <input type="text" class="form-control" name="title" placeholder="Titulo"
-                            autofocus />
+                <form action="/registro" method="POST">
+                    <div class="form-group mb-3 m-4 my-3">
+                        <label for="name"></label>
+                        <input type="text" class="form-control form-control-lg" name="name" placeholder="Nombre completo"
+                            value="{{datos.name}}" />
                     </div>
-                    <div class="mb-3">
-                        <label for="description">Descripción:</label>
-                        <textarea class="form-control" name="description" placeholder="Descripción de la nota"></textarea>
-
+                    <div class="form-group mb-3 m-4">
+                        <label for="email"></label>
+                        <input type="email" class="form-control form-control-lg" name="email" placeholder="Correo electrónico"
+                            value="{{datos.email}}" />
                     </div>
-                    <button type="submit" class="btn btn-success btn-block">
-                        Guardar Nota
-                    </button>
+                    <div class="form-group text-center">
+                        <div class="d-grid gap-2 col-7 mx-auto">
+                            <button type="submit" class="btn btn-block btn-lg text-white" style="background: #000046;">
+                                <h5>Editar Cuenta</h5>
+                            </button>
+                        </div>
+                    </div>
                 </form>
             </div>
-
         </div>
     </div>
 </div>

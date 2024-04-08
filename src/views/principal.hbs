@@ -1,4 +1,3 @@
-
 <div class="row mb-2">
 
     <div class="col">
@@ -6,8 +5,8 @@
         <div class="card mt-2">
 
             <div class="card-header text-center">
-                
-                <h5>Bienvenido ¡ {{user.email}} !</h5>
+
+                <h5>Bienvenido ¡ {{user.name}} !</h5>
 
             </div>
 
@@ -22,32 +21,64 @@
 
     <div class="col text-end">
 
-        <a href="/notas/add" class="btn btn-success">Agregar Nota</a>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            GUARDAR ASISTENCIA
+        </button>
 
-    </div>
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-4" id="exampleModalLabel">BIENVENIDO</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p class="h5">Nombre :</p>
+                        <p>{{user.name}}</p>
+                        <p class="h5">Correo Electronico :</p>
+                        <p>{{user.email}}</p>
+                        <p class="h5">Hora de Ingreso :</p>    
+                        <p {{user.horaRegistro}}></p>
 
-</div>
+                        <script>
+                            var now = new Date();
+                            var datetime = now.toLocaleString();
 
-<div class="row">
-
-    {{#each notas}}
-    <div class="mb-2 col col-12 col-lg-4 col-md-4 col-sm-12">
-
-        <div class="card">
-            
-            <div class="card-header">
-                <p><b>{{title}}</b></p>
-            </div>
-
-            <div class="card-body">
-
-                <p>{{description}}</p>
-
+                            document.getElementById("datetime").innerHTML = datetime;
+                        </script>
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <a href="/auth/table" class="btn btn-success">Guardar Asistencia</a>
+                    </div>
+                </div>
             </div>
 
         </div>
 
     </div>
-    {{/each}}
 
-</div>
+    <div class="row">
+
+        {{#each notas}}
+        <div class="mb-2 col col-12 col-lg-4 col-md-4 col-sm-12">
+
+            <div class="card">
+
+                <div class="card-header">
+                    <p><b>{{title}}</b></p>
+                </div>
+
+                <div class="card-body">
+
+                    <p>{{description}}</p>
+
+                </div>
+
+            </div>
+
+        </div>
+        {{/each}}
+
+    </div>
